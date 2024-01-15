@@ -1,0 +1,9 @@
+country_id,country_name,currency,fx_to_eur
+1,Germany,EUR,1
+2,Poland,EUR,1
+3,Spain,EUR,1
+4,Portugal,EUR,1
+5,Austria,EUR,1
+6,France,EUR,1
+7,Italy,EUR,1
+8,England,GBP,0.86
