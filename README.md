@@ -5,7 +5,9 @@ This FinTech project models the reporting structure for a hypothetical lending c
 3. Portolio Performance: How did the portfolio develop month over month? (Measured by portfolio size: loan payouts - loan repayments = outstanding notional)
 4. Debt Funding Reporting: Prepare a recurring reporting template based on funding agreements that (i) outlines the portfolio status as per reporting data as well as (ii) details on distressed loans.
 
-**Data Set**
+The SQL code is saved under FinTech_Master.
+
+# **Data Set**
 
 Since no comparable dataset was available online, the project is based on ramdomized data. The data sets are available as .csv.
 During the creation of the database, the following characteristics were considered:
@@ -15,8 +17,8 @@ During the creation of the database, the following characteristics were consider
 4. All loans have a maturity of 12 months.
 5. The data is set up, so that a certain percentage of customers repays the loan within the contractual loan duration. Some customers repay the loan after the maturity date while others do not repay the loan at all. Depending on the reporting date/ observation date of the portfolio, customers have an open loan within maturity. The table "Loan States" in the appendix outlines the different loan states and definitions.
 
-**Overall Project Steps:**
-1. Overview Report
+# **Overall Project Steps:**
+# 1. Overview Report
 - **Goal:** Understand data set and number of customers, number of loans and geographic characteristics. How many loans with what value were signed in the respective currency zones?
 - Q1: How many customers are in the table "customers"? Are these customers all unique customers?
 - Q2: How many loans are signed per customer?
@@ -46,12 +48,12 @@ Table 4: Currency Results
 
 ![Currency_stats](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/39397af4-196b-43eb-b27b-c46c567fd1af)
 
-2. Data Preparation
+# 2. Data Preparation
 - **Goal:** Standardize tables (i) Sales and (ii) Transactions into EUR.
 - **Results:** Views "sales_eur" and "transactions_eur" are ready for further analysis. Results no shown here, please refer to the SQL code.
 
 
-3. Data Analysis
+# 3. Data Analysis
 - **Goal:** Conduct further analysis for sales and marketing performance.
 - Q1: Understand the sales performance by looking at the number of signed loans, signed value (EUR) per month. Also analyse the month-over-month (mom) and year-over-year (yoy) growth.
 - Q2: Understand the best performing customer acquisition channel.
@@ -62,7 +64,6 @@ Table 4: Currency Results
 - for Q2: "Cold Call" is the best performing channel generating 46% of total sales, followed by LinkedIn generating 16% of total sales. See results in Table 6: Customer Acquisition Channel Ranked
 - for Q3: See an extract of the results in Table 7: Customer Acquisition Channel Pivot
 - for Q4: See results in Table 8: Top 20 Customers and Table 9: Top 20 Loans
-
 
 Table 5: Sales Performance by Month (Extract)
 
@@ -85,8 +86,7 @@ Table 9: Top 20 Loans
 ![Top_20_loans](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/8fbf5e9c-9e73-4257-a6c1-841b473fd1f7)
 
 
-
-4. Loan Portfolio Development
+# 4. Loan Portfolio Development
 - **Goal:** Get an overview of the loan portfolio month-over-month considering new loan payouts and loan repayments until end of month.
 - **Results:** Monthly overview with open notional and month-over-month (mom) and year-over-year (yoy) growth. See an extract of the results in Table 10: Open Notional Reporting (Extract)
 
@@ -95,24 +95,39 @@ Table 10: Open Notional Reporting (Extract)
 ![Open_notional_report](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/23ddbf70-2a4c-4c63-9c9d-f3dfce0ce555)
 
 
-5. Loan Book Report
+# 5. Loan Book Report
 - **Goal:** Create a template used to report the loan book to external stakeholders. The report can be created for a specific reporting date using a date input in the reporting mask. The report gives a loan-level overview with the key loan characteristics, exposure at the reporting date and a loan state. See the table of loan states in the appendix (Table: Loan States).
 - Q1: Create a loan book report for 2021-07-31 following the reporting obligations as per table headers in the report.
-- Q2: Create a default report focusing on the distressed loans focusing on (i) recovered loans and (ii) defaulted loans.
+- Q2: Create a loan state report for loan book 2021-07-31 listing all present loan states with number of loans and exposure per state.
+- Q3: Create a default report focusing on the distressed loans focusing on (i) recovered loans and (ii) defaulted loans. Create bins for each state sorting these loans according to the days from maturity date to final repayment date for recovered loans and days from maturity date to reporting date for default loans.
 - **Results:**
-- for Q1.: See an extract of the results in Table 11: Loan Book as per 2021-07-31. Given this is the main goal of the project, the report is attached as file in this project.
+- for Q1.: See an extract of the results in Table 11: Loan Book as per 2021-07-31. Given this is the main goal of the project, the report is attached as file in this project (see **20210731_loan_book**).
+- for Q2: See results in Table 12: Loan State Report as of 2021-07-31
+- for Q3: See results for default loans in Table 13: Distressed Loan Overview as of 2021-07-31: Default and results for recovered loans in 
 
-Table 11: Loan Book as per 2021-07-31
+Table 11: Loan Book as of 2021-07-31 (Extract)
 
 ![Loan_book_2021ß731](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/91ad1489-ffbf-40c1-94af-c87336358e67)
 
+Table 12: Loan State Report as of 2021-07-31
 
-**Overall Results Summary:**
+![20210731_loan_state_report](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/307b3ea6-fa6e-46ed-ab43-a81bc8984c93)
+
+Table 13: Distressed Loan Overview as of 2021-07-31: Default
+
+![Default_bins](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/c7791656-4c3d-4f8b-9fef-650898e2eda7)
+
+Table 14: Distressed Loan Overview as of 2021-07-31: Recovered
+
+![Recovered_bins](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/23c14a45-dead-439f-bcb9-223a00398f3c)
+
+
+# **Overall Results Summary:**
 
 The overall goal of the FinTech project is to combine the technical PostgreSQL skills with the business need for risk management and reporting obligations in a lending company.
 Despite the uniqueness of the data set for a specific loan model, the approach and reports can be adjusted for other loan models. Hence, the skills showcased during the project are transferable not only for other lending models, but any business model with reports on customer acquisition and/ or sales performance.
 
-**Futher Analysis:**
+# **Futher Analysis:**
 
 1. Adjust reporting periodes for sales and portfolio reports: weekly, bi-weekly quaterly, annual
 2. Add historic exchange rates.
@@ -122,7 +137,7 @@ Despite the uniqueness of the data set for a specific loan model, the approach a
 6.   Understand repayment behavior of customers (potentilly add cohorts)
 
 
-**Appendix:**
+# **Appendix:**
 
 **Table: Loan States** ("Loan State":"Defintion")
 
