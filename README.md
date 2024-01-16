@@ -19,12 +19,12 @@ During the creation of the database, the following characteristics were consider
 
 **Table: Loan States** ("Loan State":"Defintion")
 
-No Payout Yet: Payout date in the future
-Current: Payout date before reporting date. Open notional and maturity date after reporting date.
-Repaid: Payout date before reporting date, and (a) maturity date before reporting date and 0 open notional at maturity date, or (b) maturity date after reporting date and 0 open notional.
-Repaid (Overpaid - Rounding): Payout date before reporting date, and (a) maturity date before reporting date and >0 open notional at maturity date, or (b) maturity date after reporting date and >0 open notional.
-Recovered: Payout date and maturity date before reporting date, open notional at maturity date but repaid before reporting date.
-Default: Payout date and maturity date before reporting date, open notional at maturity date and still open at reporting date
+- No Payout Yet: Payout date in the future
+- Current: Payout date before reporting date. Open notional and maturity date after reporting date.
+- Repaid: Payout date before reporting date, and (a) maturity date before reporting date and 0 open notional at maturity date, or (b) maturity date after reporting date and 0 open notional.
+- Repaid (Overpaid - Rounding): Payout date before reporting date, and (a) maturity date before reporting date and >0 open notional at maturity date, or (b) maturity date after reporting date and >0 open notional.
+- Recovered: Payout date and maturity date before reporting date, open notional at maturity date but repaid before reporting date.
+- Default: Payout date and maturity date before reporting date, open notional at maturity date and still open at reporting date
 
 
 **ERD:**
