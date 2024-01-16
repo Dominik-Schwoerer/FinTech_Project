@@ -53,32 +53,59 @@ Table 4: Currency Results
 
 3. Data Analysis
 - **Goal:** Conduct further analysis for sales and marketing performance.
-- Q1: Understand the sales performance by looking at the signed value (EUR) per month.
+- Q1: Understand the sales performance by looking at the number of signed loans, signed value (EUR) per month. Also analyse the month-over-month (mom) and year-over-year (yoy) growth.
 - Q2: Understand the best performing customer acquisition channel.
-- Q3: Add the customer acquisition channel to understand the sales per month per channel.
+- Q3: Understand the best performing customer acquisition channel per month. See results in 
 - Q4: Get an overview of the top 20 customers and loans by signed value.
 - **Results:**
-- for Q1: See table for results.
-- for Q2: "Cold Call" is the best performing channel generating 46% of total sales, followed by LinkedIn generating 16% of total sales.
-- for Q3: See table for results.
-- for Q3: See table for results.
+- for Q1: See an extract of the results in Table 5: Sales Performance by Month (Extract) 
+- for Q2: "Cold Call" is the best performing channel generating 46% of total sales, followed by LinkedIn generating 16% of total sales. See results in Table 6: Customer Acquisition Channel Ranked
+- for Q3: See an extract of the results in Table 7: Customer Acquisition Channel Pivot
+- for Q4: See results in Table 8: Top 20 Customers and Table 9: Top 20 Loans
 
 
 Table 5: Sales Performance by Month (Extract)
 
 ![Sales Performance by Month (Extract)](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/f1fecbd8-4a7d-4559-9201-ed20482cb6fe)
 
+Table 6: Customer Acquisition Channel Ranked
+
+![Customer_acquisition_channel_ranked](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/1d725b31-126c-4df4-8b9e-ec78730aedb2)
+
+Table 7: Customer Acquisition Channel Pivot
+
+![Acquisition_pivot](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/30fb1976-7a0f-4262-9a96-4efce4cd7317)
+
+Table 8: Top 20 Customers
+
+![Top_20_customers](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/546c0f49-617a-45e6-b250-62db8728294d)
+
+Table 9: Top 20 Loans
+
+![Top_20_loans](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/8fbf5e9c-9e73-4257-a6c1-841b473fd1f7)
+
 
 
 4. Loan Portfolio Development
-- Goal: Get an overview of the loan portfolio month-over-month considering new loan payouts and loan repayments until end of month.
-- Results: Monthly overview with open notional and month-over-month (mom) and year-over-year (yoy) growth.
+- **Goal:** Get an overview of the loan portfolio month-over-month considering new loan payouts and loan repayments until end of month.
+- **Results:** Monthly overview with open notional and month-over-month (mom) and year-over-year (yoy) growth. See an extract of the results in Table 10: Open Notional Reporting (Extract)
+
+Table 10: Open Notional Reporting (Extract)
+
+![Open_notional_report](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/23ddbf70-2a4c-4c63-9c9d-f3dfce0ce555)
+
 
 5. Loan Book Report
-- Goal 1: Create a template used to report the loan book to external stakeholders. The report can be created for a specific reporting date using a date input in the reporting mask. The report gives a loan-level overview with the key loan characteristics, exposure at the reporting date and a loan state. See the table of loan states in the appendix (Table: Loan States).
-- Goal 2: Create a default report focusing on the distressed loans focusing on (i) recovered loans and (ii) defaulted loans.
-- Results:
-- Goal 1. and 2.: See table for results.
+- **Goal:** Create a template used to report the loan book to external stakeholders. The report can be created for a specific reporting date using a date input in the reporting mask. The report gives a loan-level overview with the key loan characteristics, exposure at the reporting date and a loan state. See the table of loan states in the appendix (Table: Loan States).
+- Q1: Create a loan book report for 2021-07-31 following the reporting obligations as per table headers in the report.
+- Q2: Create a default report focusing on the distressed loans focusing on (i) recovered loans and (ii) defaulted loans.
+- **Results:**
+- for Q1.: See an extract of the results in Table 11: Loan Book as per 2021-07-31. Given this is the main goal of the project, the report is attached as file in this project.
+
+Table 11: Loan Book as per 2021-07-31
+
+![Loan_book_2021ß731](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/91ad1489-ffbf-40c1-94af-c87336358e67)
+
 
 **Overall Results Summary:**
 
