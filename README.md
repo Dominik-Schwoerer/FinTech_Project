@@ -30,5 +30,5 @@ Default: Payout date and maturity date before reporting date, open notional at m
 **ERD:**
 
 Please refer to the entity-relationship diagram for an overview of tables, realtions and data types.
-![FinTech_ERD pgerd](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/d2b70816-8af1-479e-ad11-0f1d99714950)
+![FinTech_ERD pgerd](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/1967a3dd-727d-45c9-a185-b79c2043c247)
 
