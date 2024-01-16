@@ -1,4 +1,4 @@
-loan_id,customer_id,customer_acquisition_date,loan_amount,interest_rate_pm,customer_acquisition_channel_id,loan_duration
+loan_id,customer_id,loan_acquisition_date,loan_amount,interest_rate_pm,customer_acquisition_channel_id,loan_duration
 1,682,2018-08-14,104073,0.1782,4,12
 2,795,2018-08-17,259508,0.2786,5,12
 3,397,2018-08-18,422421,0.2477,4,12
