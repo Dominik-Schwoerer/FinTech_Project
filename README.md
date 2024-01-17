@@ -1,35 +1,36 @@
 # FinTech Project: Hypothetical Case Study (PostgreSQL)
-This FinTech project models the reporting structure for a hypothetical lending company granting 12-months loans with flexible repayment terms. Inspired by real-life job experience and reporting obligations to external stakeholders, the project covers th following reports:
-1. Monthly Sales Performance: How many loans were signed and in which market?
-2. Customer Acquisition Metrics: How many loans were signed and over which channel?
-3. Portolio Performance: How did the portfolio develop month over month? (Measured by portfolio size: loan payouts - loan repayments = outstanding notional)
-4. Debt Funding Reporting: Prepare a recurring reporting template based on funding agreements that (i) outlines the portfolio status as per reporting data as well as (ii) details on distressed loans.
+This FinTech project models the reporting structure for a hypothetical lending company that provides 12-month loans with flexible repayment terms. Inspired by real-life work experiences and reporting obligations to external stakeholders, the project includes the following reports:
+1. Monthly Sales Performance: How many loans have been signed and in which market?
+2. Customer Acquisition Metrics: How many loans have been signed and through which channel?
+3. Portfolio Performance: How has the portfolio performed month on month (measured by portfolio size: loan disbursements - loan repayments = notional outstanding)?
+4. **Loan Book Report (Main Objective)**: Prepare a recurring reporting template based on the funding agreements that (i) outlines the portfolio status as per reporting data and (ii) details on non-performing loans.
 
-The SQL code is saved under FinTech_Master.
+The SQL code is available in the file FinTech_Master.
+
 
 # **Data Set**
 
-Since no comparable dataset was available online, the project is based on ramdomized data. The data sets are available as .csv.
-During the creation of the database, the following characteristics were considered:
-1. For the sake of simplicity in modeling, there are a total of 1.000 unique customers with one loan each.
-2. Customers are based in EUR and GBP countries in order to add an exchange rate layer to the report. (Typical market expansions for German fintechs is England [and the United States].)
-3. Customers are acquired over a range of different channels, ranging from inbound to outbound.
+As no comparable dataset was available online, the project is based on randomised data. The datasets are available as .csv files.
+The following characteristics were taken into account when creating the database
+1. To simplify the modelling, there are a total of 1,000 unique customers with one loan each.
+2. Customers are located in EUR and GBP countries to add an exchange rate layer to the report. (Typical market expansions for German fintechs is England [and the United States]).
+3. Customers are acquired through a number of different channels, ranging from inbound to outbound.
 4. All loans have a maturity of 12 months.
-5. The data is set up, so that a certain percentage of customers repays the loan within the contractual loan duration. Some customers repay the loan after the maturity date while others do not repay the loan at all. Depending on the reporting date/ observation date of the portfolio, customers have an open loan within maturity. The table "Loan States" in the appendix outlines the different loan states and definitions.
+5. The data is set so that a certain percentage of customers repay the loan within the contractual loan period. Some customers repay the loan after the maturity date, while others do not repay the loan at all. Depending on the reporting date/observation date of the portfolio, customers have an open loan within maturity. The table _"Loan States"_ in the appendix shows the different loan states and definitions.
 
 # **Overall Project Steps:**
 # 1. Overview Report
-- **Goal:** Understand data set and number of customers, number of loans and geographic characteristics. How many loans with what value were signed in the respective currency zones?
-- Q1: How many customers are in the table "customers"? Are these customers all unique customers?
-- Q2: How many loans are signed per customer?
-- Q3: What countries are the customers from and what is the most important market?
-- Q4: What different currencies are among the customer data?
+- **Objective:** Understand the data set and the number of customers, number of loans and geographical characteristics. How many loans of what value have been signed in each currency zone?
+- Q1: How many customers are in the table "customers"? Are they all unique customers?
+- Q2: How many loans have been signed per customer?
+- Q3: Which countries are the customers from and which is the most important market?
+- Q4: What are the different currencies in the customer data?
 - **Results:**
-- for Q1: There are a total of 1.000 unique customers in the data set. See results in Table 1: Customer Results
-- for Q2: Each customer signed a single loan. See results in Table 2: Customer Rebookings
-- for Q3: The customers are from a total of 8 countries. Most customers are from  Germany (494) with a total signed value share of 48%. See results in Table 3: Geographic Results
-- for Q4: There are a total of two currencies: EUR (85% of loan value) and GBP (15% of loan value) present in the data set. See results in Table 4: Currency Results
-- **Next steps:** Standardize the data sets to adjust for currency zones to show all values in EUR for all further analysis.
+- for Q1: There are a total of 1.000 unique customers in the dataset. See results in _Table 1: Customer Results_
+- for Q2: Each customer signed a single loan. See results in _Table 2: Customer Rebookings_
+- for Q3: Customers come from a total of 8 countries. Most customers are from  Germany (494) with a total signed value share of 48%. See results in _Table 3: Geographic Results_
+- for Q4: There are a total of two currencies: EUR (85% of loan value) and GBP (15% of loan value) present in the data set. See results in _Table 4: Currency Results_
+- **Next steps:** Standardize the datasets to adjust for currency zones to show all values in EUR for all further analysis.
 
 Table 1: Customer Results
 
@@ -49,21 +50,21 @@ Table 4: Currency Results
 ![Currency_stats](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/39397af4-196b-43eb-b27b-c46c567fd1af)
 
 # 2. Data Preparation
-- **Goal:** Standardize tables (i) Sales and (ii) Transactions into EUR.
-- **Results:** Views "sales_eur" and "transactions_eur" are ready for further analysis. Results no shown here, please refer to the SQL code.
+- **Objective:** Standardize tables (i) Sales and (ii) Transactions into EUR.
+- **Results:** Views "sales_eur" and "transactions_eur" are ready for further analysis. These views are not shown here, please refer to the SQL code.
 
 
 # 3. Data Analysis
-- **Goal:** Conduct further analysis for sales and marketing performance.
+- **Objective:** Perform further analysis for sales and marketing performance.
 - Q1: Understand the sales performance by looking at the number of signed loans, signed value (EUR) per month. Also analyse the month-over-month (mom) and year-over-year (yoy) growth.
 - Q2: Understand the best performing customer acquisition channel.
 - Q3: Understand the best performing customer acquisition channel per month. See results in 
 - Q4: Get an overview of the top 20 customers and loans by signed value.
 - **Results:**
-- for Q1: See an extract of the results in Table 5: Sales Performance by Month (Extract) 
-- for Q2: "Cold Call" is the best performing channel generating 46% of total sales, followed by LinkedIn generating 16% of total sales. See results in Table 6: Customer Acquisition Channel Ranked
-- for Q3: See an extract of the results in Table 7: Customer Acquisition Channel Pivot
-- for Q4: See results in Table 8: Top 20 Customers and Table 9: Top 20 Loans
+- for Q1: See an extract of the results in _Table 5: Sales Performance by Month (Extract)_
+- for Q2: "Cold Call" is the top performing channel generating 46% of total sales, followed by LinkedIn generating 16% of total sales. See results in _Table 6: Customer Acquisition Channel Ranked_
+- for Q3: See an extract of the results in Table _7: Customer Acquisition Channel Pivot_
+- for Q4: See results in _Table 8: Top 20 Customers_ and _Table 9: Top 20 Loans_
 
 Table 5: Sales Performance by Month (Extract)
 
@@ -87,23 +88,23 @@ Table 9: Top 20 Loans
 
 
 # 4. Loan Portfolio Development
-- **Goal:** Get an overview of the loan portfolio month-over-month considering new loan payouts and loan repayments until end of month.
-- **Results:** Monthly overview with open notional and month-over-month (mom) and year-over-year (yoy) growth. See an extract of the results in Table 10: Open Notional Reporting (Extract)
+- **Objective:** Get an overview of the loan portfolio month-over-month considering new loan payouts and loan repayments until end of month.
+- **Results:** Monthly overview with open notional and month-over-month (mom) and year-over-year (yoy) growth. See an extract of the results in _Table 10: Open Notional Reporting (Extract)_
 
 Table 10: Open Notional Reporting (Extract)
 
 ![Open_notional_report](https://github.com/Dominik-Schwoerer/FinTech/assets/156693461/23ddbf70-2a4c-4c63-9c9d-f3dfce0ce555)
 
 
-# 5. Loan Book Report
-- **Goal:** Create a template used to report the loan book to external stakeholders. The report can be created for a specific reporting date using a date input in the reporting mask. The report gives a loan-level overview with the key loan characteristics, exposure at the reporting date and a loan state. See the table of loan states in the appendix (Table: Loan States).
-- Q1: Create a loan book report for 2021-07-31 following the reporting obligations as per table headers in the report.
-- Q2: Create a loan state report for loan book 2021-07-31 listing all present loan states with number of loans and exposure per state.
-- Q3: Create a default report focusing on the distressed loans focusing on (i) recovered loans and (ii) defaulted loans. Create bins for each state sorting these loans according to the days from maturity date to final repayment date for recovered loans and days from maturity date to reporting date for default loans.
+# 5. Loan Book Report (Main Objective)
+- **Objective:** Create a template used to report the loan book to external stakeholders. The report can be generated for a specific reporting date using a date input in the reporting mask. The report provides a loan level overview with the key loan characteristics, exposure at the reporting date and a loan state.
+- Q1: Generate a loan book report for 2021-07-31 according to the contractual reporting requirements (table structure [headers] of the report was provided).
+- Q2: Generate a loan state report for loan book 2021-07-31 listing all live loan states with number of loans and exposure per status.
+- Q3: Generate a default report with a focus on (i) recovered loans and (ii) defaulted loans. Create bins for each state sorting loans according to the (i) days from maturity date to reporting date for default loans and (ii) days from maturity date to final repayment date for recovered loans.
 - **Results:**
-- for Q1.: See an extract of the results in Table 11: Loan Book as per 2021-07-31. Given this is the main goal of the project, the report is attached as file in this project (see **20210731_loan_book**).
-- for Q2: See results in Table 12: Loan State Report as of 2021-07-31
-- for Q3: See results for default loans in Table 13: Distressed Loan Overview as of 2021-07-31: Default and results for recovered loans in 
+- for Q1.: See an extract of the results in _Table 11: Loan Book as per 2021-07-31 (Extract)_. Since this is the main goal of the project, the report is attached as file in this project (see **20210731_loan_book**).
+- for Q2: See results in _Table 12: Loan State Report as of 2021-07-31_
+- for Q3: See results for default loans in _Table 13: Distressed Loan Overview as of 2021-07-31: Default_ and results for recovered loans in _Table 14: Distressed Loan Overview as of 2021-07-31: Recovered_
 
 Table 11: Loan Book as of 2021-07-31 (Extract)
 
@@ -124,17 +125,18 @@ Table 14: Distressed Loan Overview as of 2021-07-31: Recovered
 
 # **Overall Results Summary:**
 
-The overall goal of the FinTech project is to combine the technical PostgreSQL skills with the business need for risk management and reporting obligations in a lending company.
-Despite the uniqueness of the data set for a specific loan model, the approach and reports can be adjusted for other loan models. Hence, the skills showcased during the project are transferable not only for other lending models, but any business model with reports on customer acquisition and/ or sales performance.
+The overall goal of the FinTech project is to combine the technical PostgreSQL skills with the business needs for risk management and reporting obligations in a hypothetical lending company.
+Despite the uniqueness of the dataset for a specific lending model, the approach and reports can be adapted for other loan models. Therefore, the skills demonstrated during the project are transferable not only for other lending models, but to any business model that reports on customer acquisition and/ or sales performance.
 
 # **Futher Analysis:**
 
 1. Adjust reporting periodes for sales and portfolio reports: weekly, bi-weekly quaterly, annual
 2. Add historic exchange rates.
 3. Add further loan data for existing customers (returning customers):
-4.   Add cohort-analysis for different monthly cohorts and/ or channel
-5.   Add sales reports for time between loan maturity and second loan payout
-6.   Understand repayment behavior of customers (potentilly add cohorts)
+4. (3.1.) Add cohort-analysis for different monthly cohorts and/ or channel
+5. (3.2.) Add sales reports for time between loan maturity and second loan payout
+6. (3.3.) Understand repayment behavior of customers (potentilly add cohorts)
+7. Add interest payments to the transactions table. (Not added due to increased complexity in creating the dataset.)
 
 
 # **Appendix:**
